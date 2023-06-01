@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="inputs">
+        <div>
+            <mat-form-field class="mat-headline">
+                <input matInput type="number"  [(ngModel)]="firstVal" (change)="convertSecond()">
+            </mat-form-field>
+            <mat-form-field>  
+                <mat-select value={{select1}} [(ngModel)]="select1" (selectionChange)="convertSecond()" class="font">
+                    <mat-option value="USD">USD</mat-option>
+                    <mat-option value="EUR">EUR</mat-option>
+                    <mat-option value="HRN">HRN</mat-option>
+                </mat-select>
+            </mat-form-field>
+                
+        </div>
+        <div>
+            <mat-form-field class="mat-headline">
+                <input type="number" matInput [(ngModel)]="secondVal" (change)="convertFirst()">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select value={{select2}} [(ngModel)]="select2" (selectionChange)="convertFirst()" class="font">
+                    <mat-option value="USD">USD</mat-option>
+                    <mat-option value="EUR">EUR</mat-option>
+                    <mat-option value="HRN">HRN</mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+        </div>
+        
+    </div>
+    <div>
+        
+    </div>
+    
+</div>

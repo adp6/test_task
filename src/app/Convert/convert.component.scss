@@ -1,0 +1,58 @@
+.inputs{
+    margin-bottom: 2em;
+    
+}
+.container{
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 80%;
+}
+.mat-headline{
+    font-size: 2em;
+    width: 100%;
+}
+.font{
+    font-size: 2em;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+    border-radius: 2px;
+}
+.none{
+    border-left: none;
+}
+.inputs{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    div{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+@media screen and (max-width:900px) {
+    .container{
+        width: 95%;
+    }
+    .mat-headline{
+        font-size: 1.3em;
+    }
+    .font{
+        font-size: 1.3em;
+    }
+    .inputs{
+        display: block;
+        
+    }
+}
+@media screen and (max-width:300px) {
+    
+    .inputs{
+        div{
+            display: block;
+        }
+    }
+    .mat-mdc-form-field {
+        width: 100%;
+    }
+}
