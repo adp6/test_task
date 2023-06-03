@@ -2,10 +2,10 @@
     <div class="inputs">
         <div>
             <mat-form-field class="mat-headline">
-                <input matInput type="number"  [(ngModel)]="firstVal" (change)="convertSecond()">
+                <input matInput type="number"  [(ngModel)]="values['input1']" (change)="convert('input1', 'input2', select1, select2)">
             </mat-form-field>
             <mat-form-field>  
-                <mat-select value={{select1}} [(ngModel)]="select1" (selectionChange)="convertSecond()" class="font">
+                <mat-select value={{select1}} [(ngModel)]="select1" (selectionChange)="convert('input1', 'input2', select1, select2)" class="font">
                     <mat-option value="USD">USD</mat-option>
                     <mat-option value="EUR">EUR</mat-option>
                     <mat-option value="HRN">HRN</mat-option>
@@ -15,10 +15,10 @@
         </div>
         <div>
             <mat-form-field class="mat-headline">
-                <input type="number" matInput [(ngModel)]="secondVal" (change)="convertFirst()">
+                <input type="number" matInput [(ngModel)]="values['input2']" (change)="convert('input2', 'input1', select2, select1)">
             </mat-form-field>
             <mat-form-field>
-                <mat-select value={{select2}} [(ngModel)]="select2" (selectionChange)="convertFirst()" class="font">
+                <mat-select value={{select2}} [(ngModel)]="select2" (selectionChange)="convert('input2', 'input1', select2, select1)" class="font">
                     <mat-option value="USD">USD</mat-option>
                     <mat-option value="EUR">EUR</mat-option>
                     <mat-option value="HRN">HRN</mat-option>

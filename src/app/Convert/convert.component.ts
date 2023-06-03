@@ -7,61 +7,20 @@ import { Component, Input, ViewEncapsulation } from "@angular/core";
 })
 
 export class ConvertComponent {
-    @Input() usd:number = 0
-    @Input() eur:number = 0
+    @Input() curency:{[key:string]:number}={}
 
-    firstVal:number = 0;
-    secondVal:number = 0;
+    values:{[key:string] : number} = {
+        'input1':0,
+        'input2':0,
+
+    }
     select1 = 'USD'
-    select2 = 'EUR'
+    select2 = 'HRN'
 
    
-    convertSecond(){
-        let v = 0
-        if(this.select1==='USD'){
-            v = this.firstVal*this.usd
-        }
-        else if(this.select1==='EUR'){
-            v = this.firstVal*this.eur
-        }
-        else{
-            v = this.firstVal
-        }
-        switch(this.select2){
-            case "USD":
-                this.secondVal = v / this.usd
-                break;
-            case "EUR":
-                this.secondVal  = v / this.eur
-                break;
-            case "HRN":
-                this.secondVal = v
-                break;
-        }
-        this.secondVal = parseFloat(this.secondVal.toFixed(3))
-    }
-    convertFirst(){
-        let v = 0
-        if(this.select2==='USD'){
-            v = this.secondVal*this.usd
-        }
-        else if(this.select2==='EUR'){
-            v = this.secondVal*this.eur
-        }
-        else{
-            v = this.secondVal
-        }
-        switch(this.select1){
-            case "USD":
-                this.firstVal = v / this.usd
-                break;
-            case "EUR":
-                this.firstVal  = v / this.eur
-                break;
-            case "HRN":
-                this.firstVal = v
-                break;
-        }
-        this.firstVal = parseFloat(this.firstVal.toFixed(3))
+    convert(input:string, convert:string, s1:string,s2:string){
+        
+        let v = this.values[input] * this.curency[s1]
+        this.values[convert] = v/this.curency[s2]
     }
 }
